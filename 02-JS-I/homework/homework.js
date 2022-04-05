@@ -1,13 +1,13 @@
 // En estas primeras 6 preguntas, reemplaza `null` por la respuesta
 
 // Crea una variable "string", puede contener lo que quieras:
-const nuevaString = "Lia";
+const nuevaString = "Lia Caroni es mi hija"; // Mientras todo esté en comillas, puedo escribir cualquier texto dentro de el y será una string.
 
 // Crea una variable numérica, puede ser cualquier número:
-const nuevoNum = -6;
+const nuevoNum = -6; //Pueden haber numeros positivos y negativos
 
 // Crea una variable booleana:
-const nuevoBool = true;
+const nuevoBool = true; //Tambien pudo haber sido false.
 
 // Resuelve el siguiente problema matemático:
 const nuevaResta = 10 - 5 === 5;
@@ -16,7 +16,7 @@ const nuevaResta = 10 - 5 === 5;
 const nuevaMultiplicacion = 10 * 4 === 40 ;
 
 // Resuelve el siguiente problema matemático:
-const nuevoModulo = 21 % 5 === 1;
+const nuevoModulo = 21 % 5 === 1; // El modulo representa el resto en la división
 
 
 // En los próximos 22 problemas, deberás completar la función.
@@ -28,14 +28,22 @@ const nuevoModulo = 21 % 5 === 1;
 function devolverString(str) {
   // "Return" la string provista: str
   // Tu código:
-  return str;
+  return str; //Str es el cajoncíto donde la persona coloca lo que quiere
+  //y yo le di que retorne lo que se coloca dentro de ese cajón
 }
 
 function suma(x, y) {
   // "x" e "y" son números
   // Suma "x" e "y" juntos y devuelve el valor
   // Tu código:
-  return x + y;
+  return x + y; //También pude hacerla declarando una nueva
+  //variable, por ejemplo: var suma1;
+  // suma1 = x+y;
+  // return suma1; por lo que entiendo, entonces
+  //lo que esta dentro del parentesis como argumento
+  // en una funcion dada, quiere decir que ya habilitaron
+  // el cajoncíto a usar... como declarar
+  // esa variable donde se almacenará la info.
 }
 
 function resta(x, y) {
@@ -115,7 +123,9 @@ function esPar(num) {
   } else {
     return false;
   }
-}
+} // Cualquier número par es divisible por 2 y no queda
+// resto alguno. Por lo tanto, diciendo que el resto es 0
+// al dividirlo por 2, indico que es par.
 
 function esImpar(num) {
   // Devuelve "true" si "num" es impar
@@ -126,14 +136,19 @@ function esImpar(num) {
   } else {
     return false;
   }
-}
+} //Aqui negué el ejercicio anterior con !== ya que es justo lo contrario
+//a lo que arriba pedían. Pero también pude haberlo hecho
+// como: num % 2 === 1 entonces es true. Ya que
+// todo número impar dividído por 2, deja un resto de valor 1.
 
 function elevarAlCuadrado(num) {
   // Devuelve el valor de "num" elevado al cuadrado
   // ojo: No es raiz cuadrada!
   // Tu código:
   return Math.pow(num , 2);
-}
+} //OJOOO: La función Math.loquesea arranca con la letra m en MAYÚSCULA.
+// Había hecho este ejercicio idéntico pero sin la mayúscula y
+// el test no me lo aprobaba.
 
 function elevarAlCubo(num) {
   // Devuelve el valor de "num" elevado al cubo
@@ -163,7 +178,9 @@ function numeroRandom() {
   //Generar un número al azar entre 0 y 1 y devolverlo
   //Pista: investigá qué hace el método Math.random()
   return Math.random();
-}
+  // Lo utilizo para hacer cosas aleatorias. Se puede modificar con una fórmula para
+  //que me de valores distintos a 0 y 1 y que además, incluya los extremos.
+} 
 
 function esPositivo(numero) {
   //La función va a recibir un entero. Devuelve como resultado una cadena de texto que indica si el número es positivo o negativo. 
@@ -177,7 +194,7 @@ function esPositivo(numero) {
   } else {
     return false;
   }
-}
+} // El else va siempre después del if, sin importar que hayan varios if seguídos arriba.
 
 function agregarSimboloExclamacion(str) {
   // Agrega un símbolo de exclamación al final de la string "str" y devuelve una nueva string
@@ -211,7 +228,7 @@ function retornarPerimetro(lado){
   //Escibe una función a la cual reciba el valor del lado de un cuadrado y retorne su perímetro.
   //Escribe tu código aquí
   return lado * 4;
-}
+} // pude haber sumado lado 4 veces: lado+lado+lado+lado
 
 
 function areaDelTriangulo(base, altura){
@@ -235,9 +252,17 @@ function esVocal(letra){
   //Verificar si el usuario ingresó un string de más de un carácter, en ese caso, informarle 
   //que no se puede procesar el dato mediante el mensaje "Dato incorrecto".
   // Si no es vocal, tambien debe devolver "Dato incorrecto".
-  //Escribe tu código aquí
-
-}
+  //Escribe tu código aqui
+  if (letra === "a" || letra === "e" || letra === "i" || letra === "o" || letra === "u") {
+    return "Es vocal";
+  } if (letra.length > 1) {
+    return "Dato incorrecto";
+  } else {
+    return "Dato incorrecto";
+  }
+} // El programa verá si se convierte en true el primer if, si da true descarta el resto de los bloques
+//de código, si ejecuta y sale false pasa al siguiente if... si sale true descarta el resto, si sale false
+// se va al último bloque e indica true para q sea dato incorrecto.
 
 
 
