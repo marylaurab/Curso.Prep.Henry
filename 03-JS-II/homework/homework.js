@@ -43,7 +43,20 @@ function conection(status) {
   //Cuando el estado es igual a 2, el usuario está "Away"
   //De lo contrario, presumimos que el usuario está "Offline"
   //Devolver el estado de conexión de usuario en cada uno de los casos.
-}
+  if(status === 1) {
+    return 'Online';
+  } else if (status === 2) {
+    return 'Away';
+  } else {
+    return 'Offline';
+  }
+} // else if es como un if pero exíste luego de algún
+//if prinipal anterior. Como me indicaban que el status
+// se evaluaba según un valor numérico ingresado,
+// puse el 'triple igual' para que el programa
+// analice el tipo de dato ingresado. PERO coloqué
+//doble igual y también me corrió bien el test
+//¿Por qué?
 
 function saludo(idioma) {
   // Devuelve un saludo en tres diferentes lenguajes:
@@ -52,7 +65,19 @@ function saludo(idioma) {
   // Si "idioma" es "ingles", devuelve "Hello!"
   // Si "idioma" no es ninguno de los anteiores o es `undefined` devuelve "Hola!"
   // Tu código:
-}
+  if(idioma == 'aleman') {
+    return 'Guten Tag!';
+  } else if (idioma == 'mandarin') {
+    return 'Ni Hao!';
+  } else if (idioma == 'ingles') {
+    return 'Hello!';
+  } else {
+    return 'Hola!';
+  }
+} //Primeramente había hecho el test igual pero
+//sin colocar como strig a cada idioma, es decir,
+//me quedaban en azulíto como la palabra idioma.
+//Aún no sé porqué tenían que ser strings
 
 function colors(color) {
   //La función recibe un color. Devolver el string correspondiente:
@@ -62,19 +87,38 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
+
 }
 
 function esDiezOCinco(numero) {
   // Devuelve "true" si "numero" es 10 o 5
   // De lo contrario, devuelve "false"
   // Tu código:
-}
+  if ((numero === 10) || (numero === 5)) {
+    return true;
+  } else {
+    return false;
+  }
+} //Misma duda acerca de los dobles iguales o los triples
+//Sí la variable numero está descrita como
+//un valor numérico debería de yo colocar 
+//los iguales estrictos, es decir, el triple.
+//PD: nótese que cumple con la teoría. Sólo se niega
+//sí ambas expresiones son falsas, sino
+//es verdadera.
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
   // De lo contrario, devuelve "false"
   // Tu código:
-}
+  if (numero < 50 && numero > 20) {
+    return true;
+  } else {
+    return false;
+  }
+} //PD: Nótese que cumple con la teoría,
+//es true sí ambas son verdaderas.
+//De la contrario, es false.
 
 function esEntero(numero) {
   // Devuelve "true" si "numero" es un entero (int/integer)
