@@ -36,7 +36,7 @@ function mayoriaDeEdad(edad) {
 //a mi me toca programar de manera tal que 
 //se pueda evaluar sí lo que está dentro
 //de dicho cajón es aceptable bajo mis condiciones o no.
-  
+
 function conection(status) {
   //Recibimos un estado de conexión de un usuario representado por un valor numérico. 
   //Cuando el estado es igual a 1, el usuario está "Online"
@@ -87,25 +87,25 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
-
+  
 }
 
 function esDiezOCinco(numero) {
-  // Devuelve "true" si "numero" es 10 o 5
-  // De lo contrario, devuelve "false"
-  // Tu código:
-  if ((numero === 10) || (numero === 5)) {
-    return true;
-  } else {
-    return false;
-  }
-} //Misma duda acerca de los dobles iguales o los triples
-//Sí la variable numero está descrita como
-//un valor numérico debería de yo colocar 
-//los iguales estrictos, es decir, el triple.
-//PD: nótese que cumple con la teoría. Sólo se niega
-//sí ambas expresiones son falsas, sino
-//es verdadera.
+    // Devuelve "true" si "numero" es 10 o 5
+    // De lo contrario, devuelve "false"
+    // Tu código:
+    if ((numero === 10) || (numero === 5)) {
+      return true;
+    } else {
+      return false;
+    }
+  } //Misma duda acerca de los dobles iguales o los triples
+  //Sí la variable numero está descrita como
+  //un valor numérico debería de yo colocar 
+  //los iguales estrictos, es decir, el triple.
+  //PD: nótese que cumple con la teoría. Sólo se niega
+  //sí ambas expresiones son falsas, sino
+  //es verdadera.
 
 function estaEnRango(numero) {
   // Devuelve "true" si "numero" es menor que 50 y mayor que 20
@@ -128,6 +128,7 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
+  
 }
 
 function fizzBuzz(numero) {
@@ -135,6 +136,7 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
+ 
 }
 
 function operadoresLogicos(num1, num2, num3) {
@@ -144,6 +146,7 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
+
 }
 
 function esPrimo(numero) {
@@ -152,32 +155,35 @@ function esPrimo(numero) {
   // Pista: un número primo solo es divisible por sí mismo y por 1
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
+  // Test
+  
 }
 
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-
+  
 }
 
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
-  //Escribe tu código aquí   
-  
+  //Escribe tu código aquí     
+ 
 }
 
 function tieneTresDigitos(numero){
-  //Leer un número entero y retornar true si tiene 3 dígitos. Caso contrario, retorna false.
+  //Leer un número entero y determinar si tiene 3 dígitos.
   //Escribe tu código aquí
-  
+ 
 }
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
+
 }
 
 
