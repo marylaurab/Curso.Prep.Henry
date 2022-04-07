@@ -5,13 +5,37 @@ function obtenerMayor(x, y) {
   // Devuelve el número más grande
   // Si son iguales, devuelve cualquiera de los dos
   // Tu código:
-}
+  if (x > y) {
+    return x;
+  } else if (y > x) {
+    return y;
+  } else {
+    return x || y;
+  }
+} // Así lo hice más apegado al enunciado, más paso a paso.
+// Al principio lo había hecho más directo:
+// if (x>y) else { return x;
+// } else { return y;
+//} Y esto devolvería x en caso de ser mayor
+// y si salía falso pasaría a correr el siguiente
+//código que daría y en caso de ser mayor, y
+// en caso de ser iguales devolvería y que es lo mismo que x.
 
 function mayoriaDeEdad(edad) {
   //Determinar si la persona según su edad puede ingresar a un evento.
   //Si tiene 18 años ó más, devolver --> "Allowed"
   //Si es menor, devolver --> "Not allowed"
-}
+  if(edad >= 18) {
+    return 'Allowed';
+  } else {
+    return 'Not allowed';
+  }
+} //Edad es el cajoncíto donde se permíte meter
+//la info a evaluar. Tu diseñas el cajón
+//y el usuario ingresa lo que el desee
+//a mi me toca programar de manera tal que 
+//se pueda evaluar sí lo que está dentro
+//de dicho cajón es aceptable bajo mis condiciones o no.
   
 function conection(status) {
   //Recibimos un estado de conexión de un usuario representado por un valor numérico. 
