@@ -128,7 +128,7 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
-  
+
 }
 
 function fizzBuzz(numero) {
@@ -136,8 +136,21 @@ function fizzBuzz(numero) {
   // Si "numero" es divisible entre 5, devuelve "buzz"
   // Si "numero" es divisible entre 3 y 5 (ambos), devuelve "fizzbuzz"
   // De lo contrario, devuelve el numero
- 
-}
+  if (numero % 3 === 0 && numero % 5 === 0) {
+    return 'fizzbuzz';
+  } else if (numero % 3 === 0) {
+    return 'fizz';
+  } else if (numero % 5 === 0) {
+    return 'buzz';
+  } else {
+    return numero;
+  }
+} // Coloqué el operador lógico && de primero para que al dar true el código pueda correr y cumplir con lo
+// que me piden. Porque de lo contrario, podría pasar que el número sea divisible entre 3 y 5 pero
+// sí yo coloqué num%3===0 en el primer bloque, el test ya tomaría como verdadero que es divisible entre 3
+// e ignoraría que también es divisible por 5, y no cumpliría con el enunciado. De hecho cambié el orden
+// de los bloques de código a ver si afectaba y si, afectaba y no pasaba los test completos.
+// Fallaron justo en donde dije en mi conclusión.
 
 function operadoresLogicos(num1, num2, num3) {
   //La función recibe tres números distintos. 
@@ -146,8 +159,26 @@ function operadoresLogicos(num1, num2, num3) {
   //Si num3 es más grande que num1 y num2, aumentar su valor en 1 y retornar el nuevo valor.
   //0 no es ni positivo ni negativo. Si alguno de los argumentos es 0, retornar "Error".
   //Si no se cumplen ninguna de las condiciones anteriores, retornar false. 
-
+  var num33
+  if(num1 < 0 || num2 < 0 || num3 < 0) {
+    return 'Hay negativos';
+  }
+  if(num1 === 0 || num2 === 0 || num3 === 0) {
+    return 'Error';
+  }
+else if(num1 > num2 && num1 > num3 && num1 > 0) {
+  return 'Número 1 es mayor y positivo';
+} 
+else if(num3 > num1 && num3 > num2) {
+  return num33 = num3 + 1;
+} else {
+  return false;
 }
+} // Coloqué como primer bloque el de Hay negativos porque sin importar que alguno sea 0, sí alguno
+// es negativo, el programa corre algo según el enunciado. Ya después si puedo exigír que
+// de error para algún 0 que te encuentre, esto sería como sí no corriera el programa a pesar
+// de que si está corriendo algo. Declaré una nueva variable para que sea el valor de num3 sumado 1. Ya que
+// no super cómo hacerla con =+
 
 function esPrimo(numero) {
   // Devuelve "true" si "numero" es primo
@@ -156,22 +187,51 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
   // Test
-  
-}
+  if (numero < 2) {
+    return false;
+  } if (numero === 2) {
+    return true;
+  } for(i = 2 ; i < numero ; i++) {
+    if(numero % i === 0) {
+      return false;
+    }
+  } return true;
+} // Los números menores que 2 no son primos (Son negativos, 0 y 1). Por otro lado,
+// Coloqué a 2 directamente en el primer if porque para el loop for la condición incial 
+// es justo con ese valor (2) y en la condición final i jamás será igual a número
+// entonces, el valor 2 quedaría fuera del loop, por lo tanto debo de
+// colocarlo en otro lado. También inicié el loop en el valor 2 porque 
+// el statement dentro del loop es una división, y ningún número es divisible
+// por cero, y todos los números son divisibles por uno.
+// Así que con uno me daría error y con el otro no me funcionaría
+// como filtro para descartar los números que no cumplan con lo que busco.
+// Return true lo puse al final porque de no correr ninguno de los bloques
+// anteriores, llegará directamente allí.
 
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
   //Escribe tu código aquí
-  
+  if(valor === true) {
+    return 'Soy verdadero';
+  } else {
+    return 'Soy falso';
+  }
 }
 
 function tablaDelSeis(){
   //Escribe una función que muestre la tabla de multiplicar del 6 (del 0 al 60).
   //La función devuelve un array con los resultados de la tabla de multiplicar del 6 en orden creciente.
-  //Escribe tu código aquí     
- 
-}
+  //Escribe tu código aquí
+  var tabla = []     
+ for(i=0 ; i < 11 ; i++) {
+   tabla.push(6 * i)
+ }
+ return tabla;
+} // Declaro un array con los corchetes. Como me piden la tabla desde el cero al diez, inicio
+// el loop en cero y que finalice antes de llegar a 11, es decir, en 10.
+// Apliqué la función push para que cada valor calculado se vaya arrojando 
+// uno detrás del otro como una tabla.
 
 function tieneTresDigitos(numero){
   //Leer un número entero y determinar si tiene 3 dígitos.
