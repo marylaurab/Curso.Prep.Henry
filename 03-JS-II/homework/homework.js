@@ -149,7 +149,12 @@ function esEntero(numero) {
   }
 } // Sí el número redondeado sigue siendo igual al número
 // que inicicalmente se metió, entonces es un entero. Porque
-// la función Math.floor siempre dará un entero.
+// la función Math.floor siempre dará un entero. Ya sea porque
+// el programa recibe un entero y la función lo deja igual, o
+// porque recibe un decimal y lo redondea, y al ser diferente al 
+// número recibido inicialmente, quiere decir que fue un
+// decimal el que se recibió. Conclusión: Sí la función
+// tuvo que ejecutarse (Math.floor) entonces No es un entero.
 
 function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3, devuelve "fizz"
@@ -228,6 +233,30 @@ function esPrimo(numero) {
 // Return true lo puse al final porque de no correr ninguno de los bloques
 // anteriores, llegará directamente allí.
 
+// Otra manera de explicarlo y verdaderamente entendiéndolo: Imagina
+// una recta real, del 1 incluído al menos infinito NO son primos y 
+// los indíco como false. El número más cercano a evaluar sí es primo
+// o no, es el 2, por lo tanto, lo utilizo como punto fronterizo al
+// resto de los números que quedan por evaluar. Entonces, indico
+// lo que el número es, o sea, es primo, coloco retornar true para él.
+// Para el cajón de la variable (llamada número) debo de conseguir
+// únicamente dos piezas que entren allí (divisible entre 1 y él mismo)
+// Cualquier número es divisíble por 1, Pero, ¿Cómo indicamos la otra
+// condición (pieza 2) que queremos? Pues, empiezo a meter todas las piezas
+// que exísten en la tabla real (fuera de los seleccionados entre el 1 incluído
+//y el menos infinito, del 2 en adelante) pero como no puedo ir metiendo
+// pieza por pieza, utilizo una funcón que me ayude a agilizar ésto sin tener
+// que hacerlo manualmente yo. Entonces utilizo el for loop. Indico cómo se
+// escogerán dichas piezas, como quiero que sean todas y cada una de ellas, 
+// empiezo desde el 2 y avanzo a una por una, incremento su valor de a uno y la llamo i.
+// Y como la condición es que el cajón número sólo acepte ser dividído por
+// 1 y él mismo, quiere decir que NO puede ser dividido por otros números.
+// Por consiguiente, lo que realizo es una división entre número e i, en 
+// otras palabras es decir: "Número dividido por cualquier número i, al cual
+// ya le puse condición de cómo moverse", entonces, sí número es dividivo
+// exacto (% 0) por dicho i, quiere decir que hay más de dos piezas que
+// entran en el cajón7variable dada
+
 function esVerdadero(valor){
   //Escribe una función que reciba un valor booleano y retorne “Soy verdadero” 
   //si su valor es true y “Soy falso” si su valor es false.
@@ -267,8 +296,20 @@ function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
-  
-}
+  var nuevovalor = numero
+  var i = 0
+  do {
+    nuevovalor += 5;
+       i += 1;
+  } while (i < 8) 
+  return nuevovalor;
+} // Caso contrario al loop for, en DoWhile pusímos la forma de aumento de la i
+// dentro del código. Además, para ir almacenando el valor del numero recibido
+// y lo que se le suma, asociamos la variable a recibir (numero) a otra variable
+// (nuevovalor) para que el cero no sea parte de la suma, ya que ésta vez,
+// el cero n funciona como pasa con i, que se cuenta y va hasta i < 8. Acaá
+//sería como decir que inicialmente algo vale cero, cuando lo que en verdad necesitamos son 
+// ls datos de num, 5, y el 8.
 
 
 // No modificar nada debajo de esta línea
