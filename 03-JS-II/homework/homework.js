@@ -87,8 +87,22 @@ function colors(color) {
   //En caso que el color recibido sea "orange", devuleve --> "This is orange"
   //Caso default: devuelve --> "Color not found"
   //Usar el statement Switch.
-  
-}
+  switch (color) {
+    case 'blue': 
+    return 'This is blue';
+    case 'red':
+      return 'This is red';
+      case 'green':
+        return 'This is green';
+        case 'orange':
+          return 'This is orange';
+          default:
+            return 'Color not found';
+  }
+} // En el paréntesis del switch coloco el cajón de la variable
+// que se va a recibir. En case coloco las opciones que las personas van a
+// poder colocar para las cuales yo le daré cierta respuesta.
+// El caso default es sí coloca alguna opción que yo no programé.
 
 function esDiezOCinco(numero) {
     // Devuelve "true" si "numero" es 10 o 5
@@ -128,8 +142,14 @@ function esEntero(numero) {
   // De lo contrario, devuelve "false"
   // Pista: Puedes resolver esto usando `Math.floor`
   // Tu código:
-
-}
+  if (Math.floor(numero) === numero) {
+    return true;
+  } else {
+    return false;
+  }
+} // Sí el número redondeado sigue siendo igual al número
+// que inicicalmente se metió, entonces es un entero. Porque
+// la función Math.floor siempre dará un entero.
 
 function fizzBuzz(numero) {
   // Si "numero" es divisible entre 3, devuelve "fizz"
@@ -236,14 +256,18 @@ function tablaDelSeis(){
 function tieneTresDigitos(numero){
   //Leer un número entero y determinar si tiene 3 dígitos.
   //Escribe tu código aquí
- 
-}
+ if(numero < 1000 && numero > 99) {
+   return true;
+ } return false;
+} // El número debe de ser entre esos valores para que tengan 3 dígitos, sino tendrían menos
+//o más de los dígitos solicitados. Por otro lado, en principio había utilizado numero.length===3 y no
+//funcionó. No sé si es porque la función .length es para strings y número espera un valor numérico.
 
 function doWhile(numero) {
   //Implementar una función tal que vaya aumentando el valor recibido en 5 hasta un límite de 8 veces
   //Retornar el valor final.
   //Usar el bucle do ... while.
-
+  
 }
 
 
