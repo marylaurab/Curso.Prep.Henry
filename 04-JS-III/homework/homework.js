@@ -96,6 +96,11 @@ function dePalabrasAFrase(palabras) {
   // con espacios entre cada palabra
   // Ejemplo: ['Hello', 'world!'] -> 'Hello world!'
   // Tu código:
+    
+  //Utilízo la función .join y le agrego el separador que me piden, 
+  // en este caso el espacio. Y qu sea retornado
+  return palabras.join(' ');
+
 }
 
 
@@ -103,6 +108,16 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+  //Usé la función .includes para saber si algo está incluido
+  // en el array. Del resto usé de lamisma
+  //manera que siempre el statement if.
+
+
+  if (array.includes(elemento)) {
+  return true;
+} else {
+  return false;
+}
 }
 
 
