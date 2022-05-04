@@ -3,19 +3,40 @@
 function devolverPrimerElemento(array) {
   // Devuelve el primer elemento de un  array (pasado por parametro)
   // Tu código:
-}
+  return array[0];
+} // Cada elemento dentro de un array, lleva una posición
+// y dicha posición, se identifica con un índice. El primer
+// índice es 0, luego 1, 2, 3,..., n posiciones.
+// Escríbo el nombre del array y en brackets ó 
+// corchetes, escribo el índice de la posción 
+// del elemento que me solicitan.
 
 
 function devolverUltimoElemento(array) {
   // Devuelve el último elemento de un array
   // Tu código:
-}
+  return array[array.length - 1];
+} // Piénsalo como sí la función .length me diéra
+// la cantidad de n elementos, OJO: NO posiciones. n ELEMENTOS
+// y como soy inteligente, analizo que la última POSICIÓN
+// del array SIEMEPRE será un número menor que la enésima
+// ELEMENTO. Nótese que estamos comparando los n elementos, con las n posiciones.
+// Sabiendo esto, sé que arrray.length me dará un número, un valor numérico,
+// a ese número se le restará el valor nuérico 1, el cual puse
+// ya de manera directa y constante. La resta de array.length - 1 es el argumento
+// del llamado del array.
 
 
 function obtenerLargoDelArray(array) {
   // Devuelve el largo de un array
   // Tu código:
-}
+  return array.length;
+} // acá no uso corchetes/brackets ya que 
+// no necesito llamar a ninguna posición del array, sino el largo del array.
+// Dentro de [] es invocar algo del array, y aplicarle .funcion al array 
+// sería que nosotros le hiciéramos algo al array, en este caso
+// sería como medir el array, "y decir su longitud"
+// RECORDAR: Hay un número n-posiciones y n-elementos. 
 
 
 function incrementarPorUno(array) {
@@ -23,6 +44,22 @@ function incrementarPorUno(array) {
   // Aumenta cada entero por 1
   // y devuelve el array
   // Tu código:
+
+  // Para asignarle algo a cada n-elemento dentro del array,
+  // convoco un bucle for que recorra del array por cada posición
+  // y a su vez, asigne determinado valor a cada uno, en coherencia 
+  // entre sí.
+  // A las n-psiciones los llamaré i, entonces tenemos: desde la
+  //posición cero, hasta la posición de índice n-1 = array.length - 1,
+  // lo que es igual a i < array.length. Almaceno todo en un nuevo array
+  // para n modificar el array original. Además, tengo que ir acomodando
+  // cada valor retornado, sin que se vaya. Dentro del argumento coloqué
+  // que para cada valor de identidad de los elementos en posiciones i, se le sume
+  // 1, y el push me va ordennado cada valor en la matruz nueva.
+  var arraynuevo = []
+   for(i=0; i < array.length; i++) {
+     arraynuevo.push(array[i] + 1);
+   } return arraynuevo;
 }
 
 
@@ -30,6 +67,11 @@ function agregarItemAlFinalDelArray(array, elemento) {
   // Añade el "elemento" al final del array
   // y devuelve el array
   // Tu código:
+
+  //El push me empuja el elemento hacia
+  //el último puesto del array
+  array.push(elemento)
+  return array;
 }
 
 
@@ -38,6 +80,13 @@ function agregarItemAlComienzoDelArray(array, elemento) {
   // y devuelve el array
   // Pista: usa el método `.unshift`
   // Tu código:
+
+  // al array le aplico uno función para actuar sobre él, entonces dicha
+  //función me coloca el elemento recibido en la primera
+  //posición del array, luego, que sea retornado.
+
+  array.unshift(elemento)
+  return array;
 }
 
 
