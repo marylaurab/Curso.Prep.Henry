@@ -172,18 +172,38 @@ function numeroMasGrande(numeros) {
   // Devuelve el número más grande
   // Tu código:
 
-  // Vamos a analizarlo desde el primer elemento que sí o sí exíste,
-  // y comparamos el resto de los elementos contra ese... ya que ese es el número
-  //más grande, o el resto lo es. Usamos un bucle
-  // para poder pasar por cada elemento del array. Y la comparación de valores
-  // o el condicional, le aplicaremos el if.
+  //Primeramente, diseño un cajón para almacenar información que se
+  //vaya encontrando en las líneas de código, una especie de historial.
+  // En él, iremos metiendo cada elemento y comparándolos entre sí para ver quien es
+  // el más grande en valor. Para eso, declaramos una variable numeromayor, ella es
+  // el cajón del que hablamos... le asignamos el valor de numeros[0] ya que 
+  // será el número mayor que primero vamos a encontrar, después
+  // tendríamos que comprarar el resto de los elementos.
+  //Creo el bucle for, para ir recorriendo todos los elementos del array, ahora bien,
+  //¿por qué lo incio i=1? Porque ya hablamos sobre el elemento en la posición
+  //0 del array, ya dijímos que es el número mayor hasta que se desmuestre
+  //lo contrario, no tenemos con quien compraralo hasta no recorrer el array.
+  //Por lo tanto, no lo compararemos con el mismo, sino con el que le sigue, así que
+  // por eso lo inicio en 1. En el condicional if, uso numeros[i] para hablar sobre
+  //todos los elementos del array, de la posición 1 en adelante que vamos
+  // a comparar. Y usé numeromayor porque es el cajón en donde se estará quedando 
+  //el número más grande que se vaya encontrando, inicialmente es numeros[0], pero
+  //se han ido comparando con los otros valores gracias al for, y no sabemos
+  //sí ya otro elemento lo sustituyó. En fin, sí esa condicion if se cumple,
+  //debo de indicar lo que quiero que pase, quiero que cuando ese número sea encontrado,
+  // quiero que se quede con el apodo de ser numeromayor, no quiero que la info sea
+  // desvanecida (que se encuentre el número mayor y lo dejemos ir), quiero
+  // que se quede aquí y se retorne, pero para retornar algo, debo de tenerlo
+  // de mantenerlo allí, no puedo dejar que se me vaya, es por eso que
+  // numeromayor = numero[i] con eso lo sello, para luego mandar a retornar dicho cajón listo.
 
-    var numeromayor
-  for(var i = 0; i < numeros.length; i++) {
-    if(numeros[0] < numeros[i]) {
-      numeromayor = numeros[i];
-    } return numeromayor;
-  }
+    var numeromayor  = numeros[0]
+  for(var i = 1; i < numeros.length; i++) {
+    if (numeros[i] > numeromayor) {
+      numeromayor = numeros[i]
+    } 
+  } return numeromayor;
+
 }
 
 
@@ -191,6 +211,18 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+
+
+  var multiplicacion
+  if(arguments.length === 0) {
+    return 0;
+  } else if (arguments.length === 1) {
+    return arguments[0];
+   } for (i = 0; i < arguments.length; i++) {
+     multiplicacion = arguments[0] * arguments[i]
+   } return multiplicacion;
+   // creo q bvoy bien, pero tengo q arreglar los inicios de i, algo asi
+ 
 }
 
 
