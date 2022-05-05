@@ -57,7 +57,7 @@ function incrementarPorUno(array) {
   // que para cada valor de identidad de los elementos en posiciones i, se le sume
   // 1, y el push me va ordennado cada valor en la matruz nueva.
   var arraynuevo = []
-   for(i=0; i < array.length; i++) {
+   for(var i=0; i < array.length; i++) {
      arraynuevo.push(array[i] + 1);
    } return arraynuevo;
 }
@@ -108,23 +108,41 @@ function arrayContiene(array, elemento) {
   // Comprueba si el elemento existe dentro de "array"
   // Devuelve "true" si está, o "false" si no está
   // Tu código:
+
   //Usé la función .includes para saber si algo está incluido
   // en el array. Del resto usé de lamisma
   //manera que siempre el statement if.
+  // También pude utilizarlo como:
+  // for (var i=0; i < array.length; i++)
+  // if(array[i] === elemento) 
+  //{return true} else { return false}  
 
 
   if (array.includes(elemento)) {
   return true;
 } else {
   return false;
-}
-}
+} }
+
 
 
 function agregarNumeros(numeros) {
   // "numeros" debe ser un arreglo de enteros (int/integers)
   // Suma todos los enteros y devuelve el valor
   // Tu código:
+
+  // Sí tengo que ir sumando cada elemento, es de lógica
+  // que para eso necesito un "cajón" dónde guardaralas a medida
+  //que avanzo, por eso,
+  // declaro una variable. Además, tengo que hacer algo para que
+  //el programa recorra cada elemento y sepa como sumarlo, usaré loop for.
+
+  var sumando = 0;
+  for(var i = 0; i < numeros.length; i++) {
+    sumando += numeros[i]
+  } return sumando;
+  
+
 }
 
 
@@ -132,6 +150,20 @@ function promedioResultadosTest(resultadosTest) {
   // "resultadosTest" debe ser una matriz de enteros (int/integers)
   // Itera (en un bucle) los elementos del array, calcula y devuelve el promedio de puntajes
   // Tu código:
+
+  //Decído hacer un bucle for, ya que tengo que pasar por cada elemento
+  //del array. El cálculo a pedir es fácil: sumar todos los elementos y dividirlos
+  // entre la cantidad de elementos que hay. Guardaré en una variable todo lo
+  // que se vaya sumando, tal cual al ejercicio anterior. Y otra variable para el calculo del
+  // promedio. De esta manera  no hay error, primero sumamos cada ellemento del array
+  // y a eso le aplicamos la división.
+
+  var promedio = 0
+  var suma = 0;
+  for(var i = 0; i < resultadosTest.length; i++) {
+    suma += resultadosTest[i];
+    promedio = suma / resultadosTest.length;
+  } return promedio;
 }
 
 
@@ -139,12 +171,25 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+
+  // Vamos a analizarlo desde el primer elemento que sí o sí exíste,
+  // y comparamos el resto de los elementos contra ese... ya que ese es el número
+  //más grande, o el resto lo es. Usamos un bucle
+  // para poder pasar por cada elemento del array. Y la comparación de valores
+  // o el condicional, le aplicaremos el if.
+
+    var numeromayor
+  for(var i = 0; i < numeros.length; i++) {
+    if(numeros[0] < numeros[i]) {
+      numeromayor = numeros[i];
+    } return numeromayor;
+  }
 }
 
 
 function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
-  // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
+  // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
 }
 
