@@ -110,7 +110,7 @@ function arrayContiene(array, elemento) {
   // Tu código:
 
   //Usé la función .includes para saber si algo está incluido
-  // en el array. Del resto usé de lamisma
+  // en el array. Del resto usé de la misma
   //manera que siempre el statement if.
   // También pude utilizarlo como:
   // for (var i=0; i < array.length; i++)
@@ -155,7 +155,7 @@ function promedioResultadosTest(resultadosTest) {
   //del array. El cálculo a pedir es fácil: sumar todos los elementos y dividirlos
   // entre la cantidad de elementos que hay. Guardaré en una variable todo lo
   // que se vaya sumando, tal cual al ejercicio anterior. Y otra variable para el calculo del
-  // promedio. De esta manera  no hay error, primero sumamos cada ellemento del array
+  // promedio. De esta manera  no hay error, primero sumamos cada elemento del array
   // y a eso le aplicamos la división.
 
   var promedio = 0
@@ -178,7 +178,7 @@ function numeroMasGrande(numeros) {
   // el más grande en valor. Para eso, declaramos una variable numeromayor, ella es
   // el cajón del que hablamos... le asignamos el valor de numeros[0] ya que 
   // será el número mayor que primero vamos a encontrar, después
-  // tendríamos que comprarar el resto de los elementos.
+  // tendríamos que comparar el resto de los elementos.
   //Creo el bucle for, para ir recorriendo todos los elementos del array, ahora bien,
   //¿por qué lo incio i=1? Porque ya hablamos sobre el elemento en la posición
   //0 del array, ya dijímos que es el número mayor hasta que se desmuestre
@@ -212,16 +212,18 @@ function multiplicarArgumentos() {
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
 
-
+if (arguments.length < 1) {
+  return 0;
+} if (arguments.length == 1) {
+  return arguments[0];
+} else if (arguments.length > 1) {
   var multiplicacion
-  if(arguments.length === 0) {
-    return 0;
-  } else if (arguments.length === 1) {
-    return arguments[0];
-   } for (i = 0; i < arguments.length; i++) {
-     multiplicacion = arguments[0] * arguments[i]
-   } return multiplicacion;
-   // creo q bvoy bien, pero tengo q arreglar los inicios de i, algo asi
+  for(var i = 0; i < arguments.length; i++) {
+    multiplicacion = arguments[i] * arguments[i + 1]  }
+    return multiplicacion;
+}
+
+ 
  
 }
 
