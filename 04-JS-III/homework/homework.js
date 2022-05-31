@@ -211,28 +211,49 @@ function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+ if(arguments.length < 1) {
+   return 0;
+ } if(arguments.length === 1) {
+   return arguments[0];
+ } else if(arguments.length > 1) {
+   var multiplicacion = arguments[0]
+   for(i = 1; i < arguments.length; i++) {
+    multiplicacion = multiplicacion * arguments[i];
+   } return multiplicacion;
+  }
 
-if (arguments.length < 1) {
-  return 0;
-} if (arguments.length == 1) {
-  return arguments[0];
-} else if (arguments.length > 1) {
-  var multiplicacion
-  for(var i = 0; i < arguments.length; i++) {
-    multiplicacion = arguments[i] * arguments[i + 1]  }
-    return multiplicacion;
-}
 
- 
- 
-}
+
+} // Sí la longitud del array arguments es menor a 1, pues debe de devolver 0, esto está simple.
+// Sí la longitud del array arguments es igual a 1, como sólo estaría el elemento en la posición
+//[0], ese es el que pedímos que sea devuelto. Ahora bien, sí la longitud del array arguments
+// es mayor a 1 ¿Qué pasa? (else if --- a final de la cadena de códigos)... 
+//Sí o sí, como hay más de 1 elemento, todos los elementos se van a tener que
+//multiplicar por el elemento en el lugar [0], así que declaro la variable "multiplicación"
+//y le asigno el valor del elemento [0] ya que sí o sí va a multiplicar al resto de los
+//elementos. Luego, uso el loop for para recorrer el array, y lo inicio desde i=1
+//ya que arguments[0] ya lo mencioné en la declaración de variables, y no tiene
+//sentido volver a multiplicar [0] por él mismo. Luego, en el proceso del bucle, lo que indíco es,
+//que la "multiplicación" va a ser igual (=) a "multiplicación" (nuevamente, es como la abreviación de +=,
+//sólo que no puedo usarla abreviada ya que después está otro operador matemático(*) ésto es para
+//que se vaya almacenando la info, y no desaparezca en cada multiplicación [i]),
+// por (*) cada elemento del array (arguments[i]).
 
 
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-
-}
+var contador = 0;
+for(i = 0; i < arreglo.length; i++) {
+  if(arreglo[i] > 18) {
+    contador += 1;
+  } 
+} return contador;
+} //Contador es una variable que se va a ir incrementando a medida que vaya encontrando elementos
+//mayores a 18. Los encuentra gracias al loop for que recorre desde la posición [0] hasta el último
+//elemento del array. Inicialmente el contador es 0 porque no hemos podido contar los elementos aún.
+// contador+=1 es lo mismo que decir contador = contador + 1. Es para ir almacenando la info/cantidad de elementos
+// mayores a 18 encontrados, y que se vayan sumando 1 a 1.
 
 
 function diaDeLaSemana(numeroDeDia) {
