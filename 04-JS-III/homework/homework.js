@@ -98,7 +98,7 @@ function dePalabrasAFrase(palabras) {
   // Tu código:
     
   //Utilízo la función .join y le agrego el separador que me piden, 
-  // en este caso el espacio. Y qu sea retornado
+  // en este caso el espacio. Y que sea retornado
   return palabras.join(' ');
 
 }
@@ -156,9 +156,15 @@ function promedioResultadosTest(resultadosTest) {
   // entre la cantidad de elementos que hay. Guardaré en una variable todo lo
   // que se vaya sumando, tal cual al ejercicio anterior. Y otra variable para el calculo del
   // promedio. De esta manera  no hay error, primero sumamos cada elemento del array
-  // y a eso le aplicamos la división.
+  // y a eso le aplicamos la división. ---> fue escrito incialmente con el ejercicio
+  //resuelto tal cual debajo, con la excepción de que promedio fue declarado con valor
+  //inicial 0, es decir, promedio=0. 
+  //Ahora, varios días después (quizá 12 días después), estudiando y comparando ejercicios
+  //y cuestionandome los conocimientos, decidí simplemente declarar la variable promedio
+  //y no asignarle valor. Y lo mejor de todo???? CORRE EL TEST, y así es que yo en
+  //un parcial lo r esolviera. WUJU!
 
-  var promedio = 0
+  var promedio
   var suma = 0;
   for(var i = 0; i < resultadosTest.length; i++) {
     suma += resultadosTest[i];
@@ -261,8 +267,14 @@ function diaDeLaSemana(numeroDeDia) {
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario. 
   //Escribe tu código aquí   
-  
-} 
+  if (numeroDeDia === 7 || numeroDeDia === 1) {
+    return "Es fin de semana";
+  } else {
+    return "Es dia Laboral";
+  }
+} //Como los días NO laborales son sólo 2, se me hace más fácil usar el operador lógico OR para
+// indicar que si el valor ingresado es alguno de esos 2 números, entonces es fin de semana. Y ya
+// por descarte, indico que sino (else) es un día laboral.
 
 
 function empiezaConNueve(n) {
@@ -277,8 +289,14 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
-  
-} 
+  for(i = 1; i < arreglo.length; i++) {
+    if(arreglo[0] === arreglo[i]) {
+      return true;
+    } else {
+      return  false;
+    }
+  }
+} //
 
 
 function mesesDelAño(array) {
