@@ -281,14 +281,27 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
+  var num = n.toString()
+  if(num.charAt(0) === "9") {
+    return true;
+  } else {
+    return false;
+  }
   
 }
+//Primero, como conozco la función .charAt() y sé que me retorna el elemento en
+//la posición index que le dé como argumento, voy a transformar en número n dado
+//hacia un string. Y pasamos de num entero a string con la función . toString()
+// Ese nuevo valor se lo guardamos  auna variable nueva llamada num.
+//Luego, con la condición, indico que si .charAt() del .toString() es igual a 9
+//(el número que me piden), entonces es verdadero, sino, que retorne negativo.
 
 
 function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
+
   for(i = 1; i < arreglo.length; i++) {
     if(arreglo[0] === arreglo[i]) {
       return true;
@@ -296,7 +309,10 @@ function todosIguales(arreglo) {
       return  false;
     }
   }
-} //
+} // No necesito estar almacenando la info que se procesa porque me piden retornar
+//un boolean , no alguna acumulación sino comparaciones entre todos, van pasando
+//y los vamos descartando sí retorna true, para hasta que sea false. Fuese distinto
+// sí  me pidiésen por ejemplo, el valor del número que se repite (que conforma al array)
 
 
 function mesesDelAño(array) {
@@ -304,15 +320,43 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-}
-
+  var nuevoarray = [];
+  for(var i = 0; i < array.length; i++) {
+    if(array[i] === "Enero" || array[i] === "Marzo" || array[i] === "Noviembre") {
+      nuevoarray.push(array[i]);
+    }
+  } if(nuevoarray.length < 3) {
+    return "No se encontraron los meses pedidos";
+  } return nuevoarray;
+    }    
+ 
+    //Declaro el nombre del array final donde se supone deben de estar
+    //los 3 meses solicitados. Me piden los 3 meses si o si, sí alguno falta, ya debo de
+    //retornar que no es posible. Luego con un for loop recorro el array e indico que si 
+    //el elemento en la posición i del array dado es igual a alguno de esos meses, que
+    //los vaya guardando en un array aparte. Ahora, luego de que se recorra todo el array,
+    //le digo a la máquina que verifique cuántos elementos hay en dicho array final,
+    //porque si es menor a 3 elementos quiere decir que faltó algún mes y debe de decir que
+    //no se encontraron los meses. Sino, va a retornar dichoa rray con lo que tiene dentro. 
 
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
-}
 
+  var losmayores = [];
+  for(var i = 0; i < array.length; i++) {
+    if(array[i] > 100) {
+      losmayores.push(array[i])
+      
+    } 
+  } return losmayores;
+}
+ //Declaro una variable para el array que me piden con los valores mayores a 100.
+ //Luego recorro el array que me dan con un for loop. Indico la condición de que,
+ //sí alguno de los elementos del array dado, es mayor a 100, ese elemento se pondrá/almacenará
+ //de último en la variable del array que declaré al inicio.
+ //Luego, indico que retorne dicho array final.
 
 function breakStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.

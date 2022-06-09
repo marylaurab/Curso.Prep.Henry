@@ -195,7 +195,8 @@ else if(num1 > num2 && num1 > num3 && num1 > 0) {
   return 'Número 1 es mayor y positivo';
 } 
 else if(num3 > num1 && num3 > num2) {
-  return num33 = num3 + 1;
+  num33 = num3 + 1
+  return num33;
 } else {
   return false;
 }
