@@ -366,7 +366,34 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
-}
+
+  var arrayfinal = [];
+  var suma = numero;
+  for(var i = 0; i < 10; i++) {
+    suma += 2;
+    if(suma === i) break;
+    else {arrayfinal.push(suma)};
+  } if(i < 10) {
+    return "Se interrumpió la ejecución";
+  } else {
+    return arrayfinal;
+  }
+  } //Declaro la variable del array que usaré al final, y la variable donde se irá sumando
+  // cada valor (+2). Lo inicio NO con suma=0 ya que el valor inicial será el
+  //número que se ingrese y a partir de allí se suma el resto.
+  //Inicio el bucle for para contar las iteciones/número de veces a repetir una acción.
+  //Máximo son 10 veces, como lo inciio desde i=0 ya esa sería la iteración #1 y así su-
+  //cesivamente hasta llegar a i=9 que sería la iteración #10, allí se frena, por eso i<10.
+  //"Tomo break" sí el condicional se cumple, sino, lo agrego al array.
+  //Luego sí se tomó el break, quiere decir que las iteraciones NO llegaron
+  //a completarse, es decir, es menor a 10. La diferencia entre i<10 en el for
+  //y en el condicional if, es que para el for si queremos que se frene cuando
+  // sea <10, es decir, que máximo sea 9... aquí hablo sobre las iteraciones contadas
+  //desde el 0 inicial.
+  //En cambio en el condicional if, lo que digo es que sí no se completaron las 10 iteraciones
+  //(que es justo por lo que se tomó el break la función) entonces retorno que la ejecución
+  //no funcionó. Sino, devuelvo el array que me piden. 
+
 
 
 function continueStatement(numero) {
@@ -376,7 +403,18 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
-}
+  var arrayfinal = [];
+  var suma = numero;
+  for(var i = 0; i < 10; i++) {
+    if(i===5) {
+      continue;
+    } else {
+      suma +=2;
+      arrayfinal.push(suma);
+    } 
+  } return arrayfinal;
+} //Mismo principio del ejercicio anterior, la diferencia es que aviso dentro del for,
+//de antemano que sí i===5 entonces tal tal, para que ya lo sepa eso antes de empezar a sumar.
 
 
 // No modificar nada debajo de esta línea
