@@ -1,12 +1,39 @@
 // No cambies los nombres de las funciones.
 
+//¿QUÉ ES UN OBJETO?: En js lo es todo. Un objeto es una colección de propiedades sobre una 
+//sola cosa.
+//¿QUÉ SON LAS PROPIEDADES?: Son asociaciones entre un nombre y un valor.
+//¿QUÉ ES UN MÉTODO?: Es una función dentro del objeto, aplicado como valor al
+// key usado.
+//BUCLE FOR... IN LOOP: Es la manera no estandar de recorrer. En este caso
+//como ya habíamos aprendido a recorrer con los índices de posiciones,
+//y en los objetos es por "títulos", debemos de recorrerlos como tal.
+//DOT NOTATION & BRACKETS NOTATION: Ambas son válidas, una más fácil que otra.
+//DOTNOTATION: objeto.propiedad vs BRACKETSNOTATION: objeto["Propiedad"]
+
 function crearGato(nombre, edad) {
   // Crear un nuevo objeto con la propiedad "nombre" y el valor definido como el argumento "nombre".
   // Agrega una propiedad al objeto con el nombre "edad" y usa el valor definido en el argumento "edad"
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
   // Tu código:
-}
+  var obj = {
+    nombre: nombre,
+    edad: edad,
+    meow: function() {
+      return "Meow!";
+    },
+  }
+  return obj;
+  
+} //Declaré el objeto que me solicitan, con llaves y la keyword "var".
+//Dentro dejé los pares key: value.. Las famosas propiedades.
+//La última propiedad es un método, ya que el valor es dado por una función.
+// Le coloco su nombre, luego invoco e indico que es una función, y después
+//escribo lo que necesíto que retorne. OJO: El return dentro del método, se va a salir
+//de dicha función y sigue con lo que queda de objeto (en este caso no hay más pares).
+//Al final, que retorne el objeto.
+
 
 
 function agregarPropiedad(objeto, property) {
@@ -14,13 +41,31 @@ function agregarPropiedad(objeto, property) {
   // Devuelve el objeto
   // NOTA: El nombre de la propiedad no es "propiedad", el nombre es el valor del argumento llamado "property" (una cadena/string)
   // Tu código:
-}
+
+objeto[property] = null;
+return objeto;
+} // Leer bien el enunciado es la clave. Cuando me dicen que la propiedad de la que me hablan
+// tiene como nombre el valor del argumento en la función inicial dada, lo que me quieren
+//decir es que property es una variable, es decir, esa oración me narra lo siguiente:
+// var property = "nombredelapropiedadquenosé";
+//obj={
+// nombredelapropiedadquenosé=null,
+//}
+//Por lo tanto, no puedo hacer lo que yo quería al inicio que era por dot notation,
+//ya que lo toma literal, y al hacer objeto.property el buscará dentro del objeto 
+//dicha propiedad y no la hay. Así mismo, ojo con el bracket notation, ya que 
+//al ser una variable no debo de encerrar la palabra dentro de comillas como un 
+//string, ya que la variable property no es un string que pertenece al objeto, más 
+//si puede ubicarla como variables.
 
 function invocarMetodo(objeto, metodo) {
   // "metodo" es una cadena que contiene el nombre de un método (funcion) en el objeto
   // Invoca ese método
   // Nada necesita ser devuelto ("returned")
   // Tu código:
+
+  
+
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
