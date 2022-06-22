@@ -64,14 +64,35 @@ function invocarMetodo(objeto, metodo) {
   // Nada necesita ser devuelto ("returned")
   // Tu código:
 
-  
+  objeto[metodo]()
 
 }
+//Leyendo el enunciado, nos dice que: var metodo = "Nombredelapropiedad"
+//y que obj = {nombredelapropiedad: funcion(){}}
+//Por lo tanto, no puedo convovarlo con el dot notation porque
+//Se lo toma literal lo que procede del punto (.) y no hay una
+//propiedad que se llame metodo, por lo tanto será undefined.
+//Metodo es una variable en donde le dimos como valor
+//el nombre de una propiedad del objeto es por eso que uso el bracket notation
+//x ser una manera de trabajar con variables, y además no uso comillas
+//dobles ni simples para dentro de los corchetes ya que es una variable
+//no  una prop el obj, como ya dijimos anteriormente.
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
+
+  var multiplicacion;
+  multiplicacion = (objetoMisterioso.numeroMisterioso * 5);
+  return multiplicacion;
+  
+  //Lo que me piden hacer ya lo hemos hecho antes, multiplicar, sumar,
+  //etc. Lo que cambia es uno de los datos con los que trabajo, en este caso el número
+  //misterioso... Ya que está dentro de un obj, no un array, y por lo tanto acceder a el,
+  //necesita ser invocado de manera diferente: nombredeobj.nombredelaprop = valordelaprop.
+  //Luego mutiplicar por el número que me indican (*5), después es retornada la variable
+  //dodne guardé todo. 
 
 }
 
@@ -80,20 +101,40 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
+
+  delete objeto[unaPropiedad];
+  return objeto;
 }
+//Me enseñaron en clases que eliminar una proiedad era deltene nombredeobj.clave
+//pero como ya sabemos, cuando trabajo con variables no puedo trabajar con el dot notation.
+// Sé que es una variable por el enunciado y la pista que me dan de usar
+//la otra notation que SI acepta variables (sólo quítale las comillas).
+//Luego retorno el objeto.
 
 function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-
+  var obj = {
+    nombre: nombre,
+    email: email,
+    password: password,
+  };
+  return obj;
 }
+  //Declaro el objeto, y agrego las propiedades qu eme piden. Luego retorno el objeto
 
 function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-}
+
+  if(usuario.email) {
+    return true;
+  } else {
+    return false;
+  }
+} //Uso el condicional if. Y según lo que salga, que sea verdadero o falso.
 
 
 
@@ -102,6 +143,8 @@ function tienePropiedad(objeto, propiedad) {
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
+
+
 }
 
 function verificarPassword(usuario, password) {
