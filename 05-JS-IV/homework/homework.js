@@ -144,28 +144,60 @@ function tienePropiedad(objeto, propiedad) {
   // De lo contrario, devuelve "false"
   // Tu código:
 
+  if(objeto[propiedad]) {
+    return true;
+  } else {
+    return false;
+  }
 
-}
+} //Traduciendo el enunciado: var 'Propiedad' = nombredelapropquemepiden(esto es el valor
+//del string declarado antes de la igualdad). Es na variable, por lo tanto
+//la invoco con el bracket notation.
 
 function verificarPassword(usuario, password) {
   // Comprueba si la "password" enviada coincide con la propiedad "password" del objeto "usuario"
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // // Tu código:
-}
+  if(usuario.password === password) {
+    return true;
+  } else {
+    return false;
+  }
+} //Comparo, sí el valor de la pro password del obj usuario coincíde con 
+//el valor ingresado. Los argumentos del función dada es el objeto (cuyo interior no lo veo
+//fue declarado), y password para el cajón que le brindaré al usuario que se comuníque
+//con la máquina. Lo comprobé cuando escribía, no se pintaba el argumento password
+//de azul sino que seguía opaco dependiendo de a qué me refería... sí a la password
+//ingresada, o sí a la propiedad dentro del obj usuario.
 
 function actualizarPassword(usuario, nuevaPassword) {
-  // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
+  // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevaPassword"
   // Devuelve el objeto
   // Tu código:
-}
+  usuario.password = nuevaPassword;
+  return usuario;
+} //Conociendo por el ejercicio anterior que usuario poseía una key
+//ccon nombre password, lo que hago es "pisar" el valor.
+//Y le asigno uno nuevo. Listo, luego se retorna.
+//nuevaPassword es una variable donde se aloja el string de la clave asignada
 
 function agregarAmigo(usuario, nuevoAmigo) {
   // "usuario" tiene una propiedad llamada "amigos" que es un array
   // Agrega "nuevoAmigo" al final de ese array
   // Devuelve el objeto "usuario"
   // // Tu código:
-}
+
+  usuario.amigos.push(nuevoAmigo);
+  return usuario;
+} //Ya sé por la teoría, que un objeto es un array... Asi´
+//que le aplíco el método .push por ser un array (en el cual
+//accedo por el llamado de una prop de un objeto).Por lo tanto
+//sí ya me dicen el nombre de la propiedad a la que quiero llegar,
+//puedo usar el dot notation, ya que sabemos que dicha prop exíste con ese nombre.
+//Luego, dentro del paréntesis le agrego el elemento que quiero enviarle al final.
+//Por último, se retorna.
+
 
 function pasarUsuarioAPremium(usuarios) {
   // "usuarios" es un array de objetos "usuario"
@@ -173,6 +205,7 @@ function pasarUsuarioAPremium(usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
+  
 }
 
 function sumarLikesDeUsuario(usuario) {
