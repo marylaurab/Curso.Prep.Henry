@@ -257,9 +257,16 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-  producto.calcularPrecioDescuento = funtion () (producto.precio - (producto.precio * porcentajeDeDescuento))
+  producto.calcularPrecioDescuento = function() {
+    return this.precio - (this.precio * this.porcentajeDeDescuento);
+  };
   return producto;
-}
+} //CalcularPrecioDescuento es una propiedad del objeto producto (nos los dice el enunciado),
+//así que le asigno el valor a dicha propiedad dentro del obj con el dot notation
+//ya conocido. Invoco una función porque me están pidiendo un método,
+// y retorno el ejercicio algebráico que me indicaron. Usé "this" para referirme
+//al objeto, pero podía facilmente escribir el nombre del obj en lugar del this, sólo
+//que es más largo, this simplifíca un poco. Luego al final retorna el producto.
 
 // No modificar nada debajo de esta línea
 // --------------------------------
