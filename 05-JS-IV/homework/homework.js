@@ -205,8 +205,18 @@ function pasarUsuarioAPremium(usuarios) {
   // Define cada propiedad "esPremium" de cada objeto como "true"
   // Devuelve el array de usuarios
   // Tu código:
-  
-}
+  for(var i=0; i<usuarios.length; i++) {
+    usuarios[i].esPremium = true;
+  } 
+  return usuarios;
+} //Como es un array y voy a trabajar con cada elemento del array (en este caso son objetos),
+//entonces empiezo a recorrer el array con el for loop. Luego, el comando que le diré que haga
+//con cada uno, es:
+// usuarios[i]: Para cada elemento en la posición i del array usuarios
+// .esPremium: Dot notation, para ese elemento anterior llamado, le invoquemos la propiedad
+//en la que vamos a trabajar. 
+//Luego le asignamos el valor true solicitado.
+//Por último se retorna el array.
 
 function sumarLikesDeUsuario(usuario) {
   // "usuario" tiene una propiedad llamada "posts" que es un array
@@ -215,7 +225,27 @@ function sumarLikesDeUsuario(usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
-}
+
+  var suma = 0;
+  for(var i = 0; i < usuario.posts.length; i++) {
+    suma += usuario.posts[i].likes
+  } return suma;
+} //Como vamos a trabajar dentro de la propiedad "posts" del objeto "usuario",
+//hacemos referencia a ella como: usuario.posts con el dot notation. Ok ahora bien,
+//tengo que acceder dentro de esta aprop en la cual me indican que es un array,
+//y para cada elemento hacer algo con uno de sus datos, es por eso que usamos ahora el for loop.
+//Porque vamos  a recorrer dicho array... usamos el for standar y el nombre del array
+//no será solo "posts" ya que el está dentro de un objeto, así que vamos a primero
+//pasar por el objeto, después array, y luego "cada" elemento del array. Así que 
+//el array para el for sería "usuario.posts". 
+//Aprovechando el bucle, vamos a simplificar cada objeto dentro del array, es decir,
+//cada obj post = posts[i]... y como es un objeto, podemos usar el dot notation
+//nuevamente e invocar la propiedad likes que me dicen.
+//usuario.posts[i].likes se traduce a: (leyendo de derecha a izquierda) la prop likes de cada
+// obj post dentro del array posts cuyo array es propiedad del obj usuario, será sumado
+//dentro de la variable suma ya declarada antes, inicialmente en 0 porque no se ha sumado nada
+//hasta ese momento. Luego retorna la suma. 
+
 
 function agregarMetodoCalculoDescuento(producto) {
   // Agregar un método (función) al objeto "producto" llamado "calcularPrecioDescuento"
@@ -227,7 +257,8 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-
+  producto.calcularPrecioDescuento = funtion () (producto.precio - (producto.precio * porcentajeDeDescuento))
+  return producto;
 }
 
 // No modificar nada debajo de esta línea
